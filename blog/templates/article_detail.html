@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Détail article{% endblock %}
+
+{% block content %}
+
+<div class="article-detail">
+
+    <h1 class="title">{{ object.titre }}</h1>
+
+    <p class="meta"><strong>Auteur :</strong> {{ object.auteur }}</p>
+    <p class="meta"><strong>Date :</strong> {{ object.date_publication|date:"d/m/Y H:i" }}</p>
+
+    <hr>
+
+    <div class="content">
+        <p>{{ object.contenu }}</p>
+    </div>
+
+    {% if object.image %}
+        <div class="image-container">
+            <img src="{{ object.image.url }}" alt="{{ object.titre }}">
+        </div>
+    {% endif %}
+
+    <hr>
+
+    <div class="actions">
+        <a class="btn back" href="{% url 'article_list' %}">⬅ Retour</a>
+        <a class="btn edit" href="{% url 'article_update' object.pk %}">✏ Modifier</a>
+        <a class="btn delete" href="{% url 'article_delete' object.pk %}">🗑 Supprimer</a>
+    </div>
+
+</div>
+
+{% endblock %}
+</body>
+</html>

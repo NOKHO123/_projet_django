@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Suppression article{% endblock %}
+
+{% block content %}
+
+<div class="delete-container">
+
+    <h1 class="delete-title">Confirmation de suppression</h1>
+
+    <p class="delete-warning">
+        Voulez-vous vraiment supprimer cet article ?
+    </p>
+
+    <hr>
+
+    <div class="article-preview">
+        <h3>{{ object.titre }}</h3>
+
+        <p><strong>Auteur :</strong> {{ object.auteur }}</p>
+        <p><strong>Date :</strong> {{ object.date_publication|date:"d/m/Y H:i" }}</p>
+
+        {% if object.image %}
+            <div class="image-preview">
+                <img src="{{ object.image.url }}" alt="{{ object.titre }}">
+            </div>
+        {% endif %}
+    </div>
+
+    <hr>
+
+    <form method="post" class="delete-form">
+        {% csrf_token %}
+
+        <button type="submit" class="btn-delete">
+            Oui, supprimer
+        </button>
+
+        <a href="{% url 'article_list' %}" class="btn-cancel">
+            Annuler
+        </a>
+    </form>
+
+</div>
+
+{% endblock %}
+</body>
+</html>

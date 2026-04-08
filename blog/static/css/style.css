@@ -1,0 +1,288 @@
+/* article_list.html /* 
+
+/* Titre  */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Bouton créer */
+.btn-create {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Container des articles */
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card article */
+.article-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.article-card img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Date */
+.date {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+/* Actions */
+.actions {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+/* Couleurs boutons */
+.read {
+    background-color: #2ecc71;
+}
+
+.edit {
+    background-color: #f39c12;
+}
+
+.delete {
+    background-color: #e74c3c;
+}
+
+/* Message vide */
+.empty {
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* article_list.html */
+
+/* Conteneur principal article_list.html */
+.article-detail {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Titre */
+.article-detail .title {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Métadonnées */
+.meta {
+    color: gray;
+    margin-bottom: 5px;
+}
+
+/* Contenu */
+.content {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Image */
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Actions */
+.actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Couleurs */
+.back {
+    background-color: #3498db;
+}
+
+.edit {
+    background-color: #f39c12;
+}
+
+.delete {
+    background-color: #e74c3c;
+}
+
+/* article_form.html */
+
+
+/* Container du formulaire */
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Titre */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Formulaire */
+.form-box p {
+    margin-bottom: 15px;
+}
+
+/* Inputs */
+.form-box input,
+.form-box textarea,
+.form-box select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+/* Bouton submit */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #2980b9;
+}
+
+/* Bouton retour */
+.btn-back {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}
+
+
+/* article_confirm_delete.html */
+
+
+/* Container */
+.delete-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Titre */
+.delete-title {
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+/* Warning */
+.delete-warning {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Preview article */
+.article-preview {
+    text-align: left;
+    margin-top: 15px;
+}
+
+/* Image */
+.image-preview {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Form */
+.delete-form {
+    margin-top: 20px;
+}
+
+/* Bouton supprimer */
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Bouton annuler */
+.btn-cancel {
+    text-decoration: none;
+    color: #3498db;
+    padding: 10px 15px;
+}
+
+.btn-cancel:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Formulaire article{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1 class="form-title">
+        {% if object %}
+            Modifier l'article
+        {% else %}
+            Créer un article
+        {% endif %}
+    </h1>
+
+    <form method="post" enctype="multipart/form-data" class="form-box">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn-submit">
+            {% if object %}
+                Mettre à jour
+            {% else %}
+                Enregistrer
+            {% endif %}
+        </button>
+    </form>
+
+    <br>
+
+    <a class="btn-back" href="{% url 'article_list' %}">⬅ Retour à la liste</a>
+
+</div>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des articles</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <h1 class="title">Liste des articles</h1>
+
+    <a class="btn-create" href="{% url 'article_create' %}">Créer un article</a>
+
+    <hr>
+
+    <div class="articles-container">
+
+        {% for article in articles %}
+            <div class="article-card">
+                
+                <h2>{{ article.titre }}</h2>
+
+                <p class="date">
+                    <strong>Date :</strong> {{ article.date_publication|date:"d/m/Y H:i" }}
+                </p>
+
+                <p>{{ article.contenu|truncatewords:20 }}</p>
+
+                {% if article.image %}
+                    <img src="{{ article.image.url }}">
+                {% endif %}
+
+                <div class="actions">
+                    <a class="btn read" href="{% url 'article_detail' article.pk %}">Lire</a>
+                    <a class="btn edit" href="{% url 'article_update' article.pk %}">Modifier</a>
+                    <a class="btn delete" href="{% url 'article_delete' article.pk %}">Supprimer</a>
+                </div>
+
+            </div>
+        {% empty %}
+            <p class="empty">Aucun article disponible.</p>
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>
